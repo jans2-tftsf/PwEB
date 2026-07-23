@@ -1,0 +1,83 @@
+<!-- José Adrian Nascimento da Silva - ATV06 - Turma 523 -->
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="img/foto-curriculo.ico" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    <title>JoseAdrian</title>
+</head>
+<body>
+
+<noscript>
+    <div id="noscript">
+        Atenção! Este site precisa do JavaScript ativado para funcionar corretamente. <br>
+        Ative o JavaScript no seu navegador, ou acesse com um navegador que tenha suporte!
+    </div>
+</noscript>
+
+<div id="pagina">
+
+    <!-- HEADER: tag semântica que substitui a antiga <div id="cabecalho">, representa o topo/cabeçalho do site -->
+    <header id="cabecalho" class="cabecalho-rodape">
+        <h1 id="titulo-cabecalho">HomePage</h1>
+    </header>
+
+    <!-- Este div apenas agrupa o menu e a área principal para o layout em Grid.
+         Ele NÃO representa uma área semântica por si só (nav e main já cumprem esse papel),
+         por isso continua como <div>, apenas com classe (sem id) para estilização. -->
+    <div class="menu-conteudo">
+
+        <!-- NAV: tag semântica para o menu de navegação do site (agrupa os botões de navegação) -->
+        <nav id="menu">
+            <button onclick="voltar_capa()">INÍCIO</button>
+
+            <h2>Menu</h2>
+            <br>
+            <button onclick="conteudo_fuction('curriculo.html', 'José Adrian')">Currículo</button>
+            <button onclick="conteudo_fuction('tema_livre.html', 'Neymar')">Neymar</button>
+        </nav>
+
+        <!-- MAIN: tag semântica que envelopa a área onde o JavaScript injeta o conteúdo principal -->
+        <main id="conteudo">
+
+            <!-- SECTION: subdivide o bloco de conteúdo inicial (capa) dentro do main -->
+            <section id="capa">
+                <img src="img/pagina_inicial.png" alt="capa trio de devs">
+            </section>
+
+        </main>
+
+        <!-- script -->
+        <script>
+
+            // função para mudar o conteúdo
+            async function conteudo_fuction(arquivo, nome) {
+                document.getElementById('conteudo').innerHTML = await (await fetch(arquivo)).text()         // para puxar o arquivo no servidor, esperar e converter em texto
+                document.getElementById('titulo-cabecalho').innerHTML = nome                                // para mudar o título
+            }
+
+
+            // para voltar para a capa
+            const capa = document.getElementById('conteudo').innerHTML      // armazena
+
+            function voltar_capa() {
+                document.getElementById('conteudo').innerHTML = capa                  // escreve o conteúdo armazenado
+                document.getElementById('titulo-cabecalho').innerHTML = 'HomePage'   // muda o título também
+            }
+
+        </script>
+
+    </div>
+
+    <!-- FOOTER: tag semântica que substitui a antiga <div id="rodape">, representa o rodapé da página -->
+    <footer id="rodape" class="cabecalho-rodape">
+        <h2>José Adrian 2026</h2>
+    </footer>
+
+</div>
+
+</body>
+</html>

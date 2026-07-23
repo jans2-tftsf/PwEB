@@ -1,0 +1,379 @@
+/* José Adrian Nascimento da Silva - ATV06 - Turma 523 */
+
+* {                             /* seleciona todos os elementos*/
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;     /* muda a forma como é calculado a largura e altura ➡ incluindo o espaço interno e externo no tamanho definido*/
+    scrollbar-width: none;      /* scroll invisível*/
+}
+
+body, html {
+    background-color: #303030;  /* Roxo escuro */
+    color: #e0e0e0;             /* Cinza claro */
+}
+
+a {
+    color: #ff6b6b;             /* Vermelho coral */
+}
+
+/* IMAGENS RESPONSIVAS: garante que nenhuma imagem do site ultrapasse a largura
+   do seu elemento pai, adaptando-se automaticamente a qualquer tamanho de tela */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+#noscript {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+
+    font-size: 30pt;
+    background-color: #16213e;  /* Azul escuro */
+    height: 300px;
+    padding: 30px;
+    color: #ffd93d;             /* Amarelo */
+}
+
+/* PÁGINA */
+#pagina {
+    display: flex;
+    flex-direction: column;     /* direção dos elementos ➡️ um abaixo do outro*/
+    min-height: 100vh;          /* altura mínima ➡️ cresce se precisar*/
+
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 30px auto;          /* 30px cima/baixo e auto direita/esquerda*/
+    width: 95%;
+
+    background-color: #0f3460;  /* Azul médio */
+}
+
+/*---------------------------------------*/
+
+/* CABEÇALHO E RODAPÉ (agora tags <header> e <footer>) */
+.cabecalho-rodape {
+    display: flex;
+    justify-content: center;    /* centraliza horizontalmente*/
+    align-items: center;        /* centraliza verticalmente*/
+
+    background-color: #16213e;  /* Azul escuro */
+    height: 100px;
+    color: #ffd93d;             /* Amarelo */
+}
+
+/*---------------------------------------*/
+
+/* ___ MENU E CONTEÚDO ___ */
+/* CSS GRID: define duas colunas estruturais fixas no layout principal:
+   a 1ª coluna (200px) para o menu de navegação e a 2ª (auto/restante) para o conteúdo */
+.menu-conteudo {
+    display: grid;
+    grid-template-columns: 200px auto;      /* coluna 1 com 200px e coluna 2 com o restante*/
+    min-height: 80vh;
+}
+
+/* MENU LATERAL (agora tag <nav>) */
+/* FLEXBOX: organiza os botões do menu em coluna, alinhados à esquerda */
+#menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: left;  /* alinha a esquerda*/
+
+    background-color: #1a1a2e;  /* Roxo escuro */
+    padding-left: 20px;
+    padding-top: 30px;
+}
+
+/* títulos */
+#menu h2 {
+    align-self: flex-start;     /* para o elemento ocupar apenas o seu espaço*/
+    width: 90%;
+
+    font-size: 20pt;
+    font-weight: bold;          /* texto mais gordo ➡ negrito*/
+
+    border-bottom: 3px solid #ff6b6b;  /* Vermelho coral */
+    padding-bottom: 5px;
+    margin-top: 20px;
+    color: #ffd93d;             /* Amarelo */
+}
+
+/* botões */
+#menu button {
+    align-self: flex-start;
+
+    font-size: 17pt;
+
+    margin-bottom: 10px;
+
+    color: #e0e0e0;             /* Cinza claro */
+    font-weight: bold;
+
+    background-color: transparent;  /* fundo transparente*/
+    border: none;                   /* remove bordas*/
+
+    cursor: pointer;                /* modifica o ponteiro do cursor*/
+}
+
+#menu button:hover {
+    color: #ff6b6b;             /* Vermelho coral - hover */
+}
+
+/*---------------------------------------*/
+
+/* ___ CONTEÚDO ___ (agora tag <main>) */
+
+/* PÁGINA INICIAL */
+#conteudo {
+    background-color: #0f3460;  /* Azul médio */
+}
+
+#capa {
+    text-align: center;
+    background-color: #16213e;  /* Azul escuro */
+    height: 100vh;
+    color: #ffd93d;             /* Amarelo */
+}
+
+/*---------------------------------------*/
+
+/* CURRÍCULO-ADRIAN */
+
+/* informações iniciais */
+/* FLEXBOX: alinha a foto e o texto de apresentação lado a lado */
+#informacoes_iniciais {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+
+    width: 95%;
+    margin: auto;
+    margin-top: 30px;
+}
+
+#informacoes_iniciais img {
+    width: auto;
+    max-height: 200px;
+}
+
+#informacoes_iniciais p {
+    margin: auto;
+    width: 75%;
+    text-align: justify;
+    color: #e0e0e0;             /* Cinza claro */
+}
+
+/* tabela */
+#tabela-formacoes {
+    color: #e0e0e0;             /* Cinza claro */
+
+    border-collapse: collapse;
+
+    width: 95%;
+    height: 50vh;
+
+    margin: auto;
+    margin-top: 30px;
+}
+
+#tabela-formacoes .titulo {
+    background-color: #16213e;  /* Azul escuro */
+    border-bottom: 1px solid #ffd93d;  /* Amarelo */
+    height: 50px;
+    color: #ffd93d;             /* Amarelo */
+}
+
+#tabela-formacoes tr {
+    text-align: center;
+    vertical-align: middle;     /* alinhamento vertical*/
+}
+
+.linha-impar {
+    background-color: #1a1a2e;  /* Roxo escuro */
+}
+
+.bordas-separador {
+    border-right: 1px solid #ff6b6b;  /* Vermelho coral */
+    border-left: 1px solid #ff6b6b;   /* Vermelho coral */
+}
+
+#github-adrian, #github-adrian a {
+    text-align: center;
+
+    background-color: #16213e;  /* Azul escuro */
+    padding: 20px;
+    margin-top: 30px;
+
+    color: #ffd93d;             /* Amarelo */
+}
+
+#github-adrian a:hover {
+    color: #ff6b6b;             /* Vermelho coral - hover */
+}
+
+/*---------------------------------------*/
+
+/* TEMA LIVRE - NEYMAR */
+
+#pagina-tema {
+    padding: 20px 30px;
+}
+
+/* FLEXBOX: alinha a foto redonda e o texto de introdução lado a lado */
+#inicio {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+    margin-bottom: 40px;
+    background: rgba(255, 255, 255, 0.03);
+    padding: 25px;
+    border-radius: 12px;
+    border-left: 4px solid #ffd93d;
+}
+
+.imagem {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #ffd93d;
+}
+
+.texto {
+    text-align: justify;
+    font-size: 15pt;
+    color: #e0e0e0;
+    line-height: 1.6;
+}
+
+.texto strong {
+    color: #ffd93d;
+}
+
+.texto a {
+    color: #ffd93d;
+    font-weight: 600;
+}
+
+.texto a:hover {
+    text-decoration: underline;
+}
+
+#titulo {
+    background: linear-gradient(135deg, #0f3460, #16213e);
+    color: #ffd93d;
+    text-align: center;
+    padding: 18px;
+    font-size: 24pt;
+    font-weight: 700;
+    border-radius: 8px;
+    border-bottom: 3px solid #ffd93d;
+    margin-bottom: 25px;
+    letter-spacing: 3px;
+}
+
+.card {
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 217, 61, 0.2);
+}
+
+/*=========================================
+  MEDIA QUERIES - RESPONSIVIDADE
+=========================================*/
+
+/* MEDIA QUERY 1: aplica-se a telas com largura máxima de 768px (celulares/tablets pequenos).
+   Reorganiza o grid principal de "2 colunas lado a lado" para "1 coluna empilhada",
+   fazendo o menu lateral se mover para o topo da página e o conteúdo ocupar 100% da largura. */
+@media (max-width: 768px) {
+
+    /* o grid passa a ter apenas 1 coluna (100% da largura) e 2 linhas empilhadas:
+       linha 1 = menu, linha 2 = conteúdo */
+    .menu-conteudo {
+        grid-template-columns: 1fr;   /* uma única coluna ocupando toda a largura */
+        grid-template-rows: auto auto; /* menu em cima, conteúdo embaixo */
+    }
+
+    /* o menu deixa de ser uma coluna lateral fixa e vira uma barra horizontal no topo */
+    #menu {
+        flex-direction: row;      /* botões lado a lado em vez de empilhados */
+        flex-wrap: wrap;          /* quebra linha se não couberem os botões */
+        justify-content: center;
+        align-items: center;
+        padding: 15px;
+        gap: 10px;
+    }
+
+    #menu h2 {
+        display: none;           /* esconde o título "Menu" para economizar espaço no celular */
+    }
+
+    #menu button {
+        font-size: 13pt;
+        margin-bottom: 0;
+    }
+
+    /* bloco de apresentação (currículo e Neymar) passa a empilhar foto e texto,
+       em vez de ficarem lado a lado, para caber melhor na tela estreita */
+    #informacoes_iniciais,
+    #inicio {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    #informacoes_iniciais p {
+        width: 100%;
+    }
+
+    .imagem {
+        width: 120px;
+        height: 120px;
+    }
+
+    #titulo {
+        font-size: 18pt;
+        padding: 14px;
+    }
+
+    #titulo-cabecalho {
+        font-size: 18pt;
+    }
+
+    /* TABELA RESPONSIVA: em telas pequenas a tabela de formações vira uma lista
+       empilhada em vez de manter colunas apertadas, melhorando a leitura no celular */
+    #tabela-formacoes,
+    #tabela-formacoes tr,
+    #tabela-formacoes th,
+    #tabela-formacoes td {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    #tabela-formacoes th,
+    #tabela-formacoes td {
+        padding: 8px;
+        text-align: left;
+    }
+}
+
+/* MEDIA QUERY 2: telas muito pequenas (celulares estreitos, menores que 480px).
+   Reduz ainda mais fontes e espaçamentos para melhorar a leitura. */
+@media (max-width: 480px) {
+
+    #pagina {
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    .texto {
+        font-size: 12pt;
+    }
+
+    #tabela-formacoes {
+        font-size: 10pt;
+    }
+}
